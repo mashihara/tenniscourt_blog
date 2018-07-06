@@ -40,21 +40,6 @@ display_id varchar(10) -- section_id + system_id + place_id
 ,adress	varchar(100) -- 住所
 ,latitude decimal(8,5) -- 緯度
 ,longitude decimal(8,5) -- 軽度
-,sys_insert_date timestamp
-,sys_update_date timestamp
-,sys_del_flg boolean
-,constraint mt_place_pk PRIMARY KEY (display_id)
-,constraint mt_system_fk FOREIGN KEY(section_id,system_id)
-        REFERENCES MT_SYSTEM(section_id,system_id)
-);
-
-
--- 3. MT_PLACE_INFO コート詳細情報(ロッカーの有無、ブログ記事など)
--- drop table MT_PLACE_INFO;
--- 拠点ごとの詳細情報（つまり全体のコート数だったり、アクセス方法だったり）
-create table
-MT_PLACE_INFO (
-display_id varchar(10)
 ,opne_hour boolean -- 営業時間
 ,changing_room_flg	boolean --更衣室有無フラグ
 ,shower_flg boolean -- シャワー有無フラグ
@@ -66,10 +51,11 @@ display_id varchar(10)
 ,sys_insert_date timestamp
 ,sys_update_date timestamp
 ,sys_del_flg boolean
-,constraint mt_place_info_pk PRIMARY KEY (display_id)
-,constraint mt_place_info_fk FOREIGN KEY (display_id)
-        REFERENCES MT_PLACE(display_id)
+,constraint mt_place_pk PRIMARY KEY (display_id)
+,constraint mt_system_fk FOREIGN KEY(section_id,system_id)
+        REFERENCES MT_SYSTEM(section_id,system_id)
 );
+
 
 -- 4. MT_COURT コートタイプごとのマスタ(同じ場所でも、インドアやコートの種類によって値段が違う)
 -- drop table MT_COURT;
