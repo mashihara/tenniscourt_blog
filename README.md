@@ -29,6 +29,26 @@ npm test
 
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
 
+# コミットメッセージ
+## フォーマット
+```
+type(scope):commit message
+```
+### 例：
+```
+chore(webserver): npm install superagent
+```
+
+## type
+- add: Add new feature
+- fix: A bug fix
+- docs: Documentation only changes
+- style: 空白、書式の変更（コードの意味に変更を与えない）
+- refactor:バグfixやコードの修正ではない変更
+- perf: 性能改善のための変更
+- test: テストの追加
+- chore: ライブラリの変更、ドキュメントの追加（※choreはチョアーと読む。雑用という意味）
+
 # install memo
 ```
 masuharookpuro2:tenniscourt_blog mashihara$ vue init webpack .
