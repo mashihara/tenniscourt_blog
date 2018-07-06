@@ -67,9 +67,6 @@ display_id varchar(10)
 ,court_number int --コートの面数
 ,court_name varchar(100) -- コートタイプの名前
 ,surface_type varchar(2) -- 下記参照
-,section_id varchar(2)
-,system_id varchar(4)
-,place_id varchar(4)
 ,sys_insert_date timestamp
 ,sys_update_date timestamp
 ,sys_del_flg boolean
