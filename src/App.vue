@@ -1,14 +1,18 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
+    <BearHeader/>
     <router-view/>
   </div>
 </template>
 
 <script>
-export default {
-  name: 'App'
-}
+  import BearHeader from '@/components/common/BearHeader'
+  export default {
+    name: 'App',
+    components: {
+      BearHeader
+    }
+  }
 </script>
 
 <style>
