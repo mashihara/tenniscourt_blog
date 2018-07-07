@@ -58,8 +58,8 @@ display_id varchar(10) -- section_id + system_id + place_id
 
 
 -- 4. MT_COURT コートタイプごとのマスタ(同じ場所でも、インドアやコートの種類によって値段が違う)
--- drop table MT_COURT;
 -- 同一拠点内でさらにコートの料金が違う単位でコートIDが振られる
+-- drop table MT_COURT;
 create table
 MT_COURT (
 display_id varchar(10)
@@ -86,6 +86,7 @@ display_id varchar(10)
 -- 99:不明
 
 -- 5. MT_PLACE_FEE コート料金(曜日、時間毎)
+-- drop table MT_COURT_FEE
 create table
 MT_COURT_FEE (
 display_id varchar(10) -- section_id + system_id + place_id
