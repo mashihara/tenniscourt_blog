@@ -11,7 +11,6 @@
         width="120">
       </el-table-column>
 
-
       <el-table-column
         label="コート場所名"
         width="180">
@@ -19,7 +18,6 @@
           <router-link to="/PlaceEdit">{{ scope.row.place_name }}</router-link>
         </template>
       </el-table-column>
-
 
       <el-table-column>
         <template slot-scope="scope">
@@ -35,32 +33,32 @@
 </template>
 
 <script>
-  export default {
-    name: "PlaceList",
-    data() {
-      return {
-        tableData: [{
-          display_id: '0001',
-          place_name: '有明',
-        }, {
-          display_id: '0002',
-          place_name: '大井埠頭',
-        }, {
-          display_id: '0003',
-          place_name: '芝浦埠頭',
-        }
-        ]
+export default {
+  name: 'PlaceList',
+  data () {
+    return {
+      tableData: [{
+        display_id: '0001',
+        place_name: '有明'
+      }, {
+        display_id: '0002',
+        place_name: '大井埠頭'
+      }, {
+        display_id: '0003',
+        place_name: '芝浦埠頭'
       }
+      ]
+    }
+  },
+  methods: {
+    handleEdit (index, row) {
+      console.log(index, row)
     },
-    methods: {
-      handleEdit(index, row) {
-        console.log(index, row);
-      },
-      handleDelete(index, row) {
-        console.log(index, row);
-      }
+    handleDelete (index, row) {
+      console.log(index, row)
     }
   }
+}
 </script>
 
 <style scoped>

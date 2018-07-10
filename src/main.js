@@ -22,9 +22,9 @@ Vue.config.productionTip = false
 Vue.use(ElementUI, {locale})
 
 // Bootstrap
-Vue.use(BootstrapVue);
+Vue.use(BootstrapVue)
 
-Vue.use(Vuex);
+Vue.use(Vuex)
 
 /* eslint-disable no-new */
 new Vue({

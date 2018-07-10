@@ -3,9 +3,9 @@
 </template>
 
 <script>
-    export default {
-        name: "BearHeader"
-    }
+export default {
+  name: 'BearHeader'
+}
 </script>
 
 <style scoped>

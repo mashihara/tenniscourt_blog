@@ -40,9 +40,6 @@
       <el-input type="textarea" :rows="6" v-model="form.description"></el-input>
     </el-form-item>
 
-
-
-
     <el-form-item label="Activity zone">
       <el-select v-model="form.region" placeholder="please select your zone">
         <el-option label="Zone one" value="shanghai"></el-option>
@@ -85,30 +82,29 @@
 </template>
 
 <script>
-
-  export default {
-    name: "PlaceList",
-    data() {
-      return {
-        form: {
-          name: '',
-          region: '',
-          date1: '',
-          date2: '',
-          delivery: false,
-          type: [],
-          resource: '',
-          desc: ''
-        }
+export default {
+  name: 'PlaceList',
+  data () {
+    return {
+      form: {
+        name: '',
+        region: '',
+        date1: '',
+        date2: '',
+        delivery: false,
+        type: [],
+        resource: '',
+        desc: ''
       }
-    },
-    methods: {
-      onSubmit() {
-        console.log('submit!');
-      }
+    }
+  },
+  methods: {
+    onSubmit () {
+      console.log('submit!')
     }
   }
 
+}
 </script>
 
 <style scoped>

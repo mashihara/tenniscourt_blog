@@ -6,13 +6,13 @@
 </template>
 
 <script>
-  import BearHeader from '@/components/common/BearHeader'
-  export default {
-    name: 'App',
-    components: {
-      BearHeader
-    }
+import BearHeader from '@/components/common/BearHeader'
+export default {
+  name: 'App',
+  components: {
+    BearHeader
   }
+}
 </script>
 
 <style>
