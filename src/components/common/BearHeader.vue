@@ -1,5 +1,5 @@
 <template>
-  <h1>テニスベア　コート管理</h1>
+  <h1 class="wf-nikukyu">テニスベアコートマスタ</h1>
 </template>
 
 <script>
@@ -9,5 +9,5 @@
 </script>
 
 <style scoped>
-
+  .wf-nikukyu { font-family: "Nikukyu"; }
 </style>
