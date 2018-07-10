@@ -1,0 +1,15 @@
+FROM node:8.11
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    supervisor \
+  && mkdir -p /var/log/supervisor \
+  && :
+COPY ./server/supervisor/supervisord.conf /etc/supervisor/conf.d/
+
+# npm install
+WORKDIR /app
+COPY package*.json ./
+RUN npm install
+
+COPY ./server/appserver/appserver.js ./appserver/
+
+CMD ["/usr/bin/supervisord"]

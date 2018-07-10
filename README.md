@@ -32,7 +32,7 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 # コミットメッセージ
 ## フォーマット
 ```
-type(scope):commit message
+type(scope):commit messagee
 ```
 ### 例：
 ```
