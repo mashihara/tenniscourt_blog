@@ -1,7 +1,11 @@
 var express = require('express');
 var app = express();
 
-// app.use(express.static('../dist'));
+app.get('/api', function (req, res) {
+  res.send('Yes API!');
+});
+
+app.use(express.static('../dist'));
 
 port = 3000
 
