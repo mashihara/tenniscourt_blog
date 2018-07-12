@@ -1,7 +1,7 @@
 version: "3"
 
 services:
-  web:
+  webserver:
     build:
       context: .
       dockerfile: Dockerfile_web
@@ -9,7 +9,7 @@ services:
     container_name: webserver
     ports:
     - "8080:80"
-  app:
+  appserver:
     build:
       context: .
       dockerfile: Dockerfile_app
