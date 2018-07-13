@@ -5,16 +5,15 @@ services:
     build:
       context: .
       dockerfile: Dockerfile_web
-    image: webserver:0.0.1
+    image: 170040617115.dkr.ecr.ap-northeast-1.amazonaws.com/webserver:0.0.1
     container_name: webserver
     ports:
-    - "8080:80"
+    - "80:80"
   appserver:
     build:
       context: .
       dockerfile: Dockerfile_app
-    image: appserver:0.0.1
+    image: 170040617115.dkr.ecr.ap-northeast-1.amazonaws.com/appserver:0.0.1
     container_name: appserver
     ports:
     - "3000:3000"
-
