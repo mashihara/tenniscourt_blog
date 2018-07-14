@@ -10,7 +10,6 @@ app.get('/hello', function (req, res) {
 });
 
 
-
 app.use(express.static('../dist'));
 
 port = 3000

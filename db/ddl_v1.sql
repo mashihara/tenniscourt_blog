@@ -46,8 +46,6 @@ display_id varchar(10) -- section_id + system_id + place_id
 ,toilet_flg boolean  -- トイレ有無フラグ
 ,parking_flg boolean -- 駐車場有無フラグ
 ,access	varchar(500) -- アクセス方法
-,description varchar(1000) -- ブログのメイン説明
-,author	varchar(20) -- ブログ作成者
 ,sys_insert_date timestamp
 ,sys_update_date timestamp
 ,sys_del_flg boolean
@@ -56,22 +54,38 @@ display_id varchar(10) -- section_id + system_id + place_id
         REFERENCES MT_SYSTEM(section_id,system_id)
 );
 
-
--- 4. MT_COURT コートタイプごとのマスタ(同じ場所でも、インドアやコートの種類によって値段が違う)
--- 同一拠点内でさらにコートの料金が違う単位でコートIDが振られる
--- drop table MT_COURT;
+-- いろんな人が投稿できるように
+-- drop table MT_PLACE_BLOG;
 create table
-MT_COURT (
-display_id varchar(10)
-,court_id varchar(3)
-,court_number int --コートの面数
-,court_name varchar(100) -- コートタイプの名前
-,surface_type varchar(2) -- 下記参照
+MT_PLACE_BLOG (
+display_id varchar(10) -- section_id + system_id + place_id
+,blog_time timestamp
+,description varchar(1000) -- ブログのメイン説明
+,author	varchar(20) -- ブログ作成者
 ,sys_insert_date timestamp
 ,sys_update_date timestamp
 ,sys_del_flg boolean
-,constraint mt_court_pk PRIMARY KEY (display_id,court_id)
-,constraint mt_court_fk FOREIGN KEY (display_id)
+,constraint mt_place_blog_pk PRIMARY KEY (display_id,blog_time)
+,constraint mt_place_blog_fk FOREIGN KEY (display_id)
+        REFERENCES MT_PLACE(display_id)
+);
+
+-- 4. MT_COURT コートタイプごとのマスタ(同じ場所でも、インドアやコートの種類によって値段が違う)
+-- 同一拠点内でさらにコートの料金が違う単位でコートIDが振られる
+-- drop table MT_COURT_TYPE;
+create table
+MT_COURT_TYPE (
+display_id varchar(10)
+,court_type_id varchar(3) --旧キーの名前はcourt_number
+,number_by_court_type int --コートの面数
+,court_name varchar(100) -- コートタイプの名前
+,surface_type varchar(2) -- 下記参照
+,indoor_flg boolean -- 下記参照
+,sys_insert_date timestamp
+,sys_update_date timestamp
+,sys_del_flg boolean
+,constraint mt_court_type_pk PRIMARY KEY (display_id,court_type_id)
+,constraint mt_court_type_fk FOREIGN KEY (display_id)
         REFERENCES MT_PLACE(display_id)
 );
 
@@ -86,11 +100,11 @@ display_id varchar(10)
 -- 99:不明
 
 -- 5. MT_PLACE_FEE コート料金(曜日、時間毎)
--- drop table MT_COURT_FEE
+-- drop table MT_COURT_TYPE_FEE
 create table
-MT_COURT_FEE (
+MT_COURT_TYPE_FEE (
 display_id varchar(10) -- section_id + system_id + place_id
-,court_id varchar(3)
+,court_tye_id varchar(3)
 ,day_of_week int -- 曜日 1:sunday
 ,statr_time int -- 開始時間
 ,fee int -- 料金
@@ -99,7 +113,7 @@ display_id varchar(10) -- section_id + system_id + place_id
 ,sys_insert_date timestamp
 ,sys_update_date timestamp
 ,sys_del_flg boolean
-,constraint mt_court_fee_pk PRIMARY KEY (display_id,court_id,day_of_week,statr_time)
-,constraint mt_court_fee_fk FOREIGN KEY (display_id,court_id)
-        REFERENCES MT_COURT(display_id,court_id)
+,constraint mt_court_type_fee_pk PRIMARY KEY (display_id,court_type_id,day_of_week,statr_time)
+,constraint mt_court_type_fee_fk FOREIGN KEY (display_id,court_type_id)
+        REFERENCES MT_COURT(display_id,court_type_id)
 );
