@@ -2,6 +2,13 @@ pipeline {
   agent any
   stages {
     stage('npm build') {
+      agent {
+        docker {
+          image 'node'
+          args '8.11'
+        }
+        
+      }
       steps {
         sh 'npm run build'
       }
