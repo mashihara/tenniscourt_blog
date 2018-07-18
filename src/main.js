@@ -3,6 +3,7 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import store from '@/store/store.js'
 
 // Element-ui
 import ElementUI from 'element-ui'
@@ -31,5 +32,6 @@ new Vue({
   el: '#app',
   router,
   components: { App },
-  template: '<App/>'
+  template: '<App/>',
+  store: new Vuex.Store(store)
 })

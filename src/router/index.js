@@ -11,7 +11,7 @@ export default new Router({
     {
       path: '/',
       name: 'PlaceList',
-      component: PlaceList,
+      component: PlaceList
     },
     {
       path: '/PlaceEdit',
