@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('npm build') {
       steps {
-        sh 'npm run build'
+        sh 'pwd'
       }
     }
     stage('docker build') {
