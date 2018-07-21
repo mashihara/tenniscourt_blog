@@ -9,8 +9,7 @@ app.get('/hello', function (req, res) {
   res.send('Hello World!');
 });
 
-
-app.use(express.static('../dist'));
+app.use(express.static('dist'));
 
 port = 3000
 

@@ -44,17 +44,6 @@ export default {
   name: 'PlaceList',
   data () {
     return {
-      tableData: [{
-        display_id: '0001',
-        place_name: '有明'
-      }, {
-        display_id: '0002',
-        place_name: '大井埠頭'
-      }, {
-        display_id: '0003',
-        place_name: '平和島公園'
-      }
-      ],
       payload: {
         amount: 10
       }
@@ -70,7 +59,8 @@ export default {
   },
   computed: {
     ...mapState({
-      count: state => state.count
+      count: state => state.count,
+      tableData: state => state.tableData
     }),
     ...mapGetters([
       'count2bai'
