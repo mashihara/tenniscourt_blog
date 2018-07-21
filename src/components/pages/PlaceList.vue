@@ -27,6 +27,10 @@
             type="danger"
             @click="handleDelete(scope.$index, scope.row)">削除
           </el-button>
+          <el-button
+            size="mini"
+            @click="handleAdd(scope.$index, scope.row)">追加
+          </el-button>
         </template>
       </el-table-column>
     </el-table>
@@ -34,7 +38,7 @@
 </template>
 
 <script>
-import { mapState } from 'vuex'
+import { mapState, mapGetters } from 'vuex'
 
 export default {
   name: 'PlaceList',
@@ -50,26 +54,28 @@ export default {
         display_id: '0003',
         place_name: '平和島公園'
       }
-      ]
+      ],
+      payload: {
+        amount: 10
+      }
     }
   },
   methods: {
     handleDelete (index, row) {
       this.$store.commit('increment')
-      console.log(this.$store.state.count)
+    },
+    handleAdd (index, row) {
+      this.$store.commit('add', this.$data.payload)
     }
   },
-  computed: mapState({
-    // アロー関数は、コードをとても簡潔にできます！
-    count: state => state.count,
-    // 文字列を渡すことは、`state => state.count` と同じです
-    countAlias: 'count',
-    // `this` からローカルステートを参照するときは、通常の関数を使わなければいけません
-    countPlusLocalState (state) {
-      return state.count + this.localCount
-    }
-  })
-
+  computed: {
+    ...mapState({
+      count: state => state.count
+    }),
+    ...mapGetters([
+      'count2bai'
+    ])
+  }
 }
 </script>
 
