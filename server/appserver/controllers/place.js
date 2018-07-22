@@ -1,22 +1,19 @@
 var Router = require('express')
 var router = Router()
+const pgp = require('pg-promise')()
 
 router.get('/', (req, res) => {
-  console.log(process.env.DB_HOST)
-  tableData= [{
-    display_id: '0001',
-    place_name: '有明'
-  }, {
-    display_id: '0002',
-    place_name: '大井埠頭'
-  }, {
-    display_id: '0003',
-    place_name: '平和島公園'
-  }]
-  res.json(tableData)
+  var db = pgp(process.env.DB_CONNECTION)
+  db.any("SELECT display_id,place_name FROM mt_place")
+    .then(function (data) {
+      res.json(data)
+    })
+    .catch(function (error) {
+      console.log("ERROR:", error);
+    });
 });
 router.get('/hoge', (req, res) => {
-  res.send('Yes , place hoge api')
+  res.send('Yes, place hoge api')
 });
 
 module.exports = router;
