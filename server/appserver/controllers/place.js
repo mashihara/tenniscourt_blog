@@ -2,6 +2,7 @@ var Router = require('express')
 var router = Router()
 
 router.get('/', (req, res) => {
+  console.log(process.env.DB_HOST)
   tableData= [{
     display_id: '0001',
     place_name: '有明'

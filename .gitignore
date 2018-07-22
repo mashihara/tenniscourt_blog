@@ -16,3 +16,6 @@ ecs-params.yml
 *.ntvs*
 *.njsproj
 *.sln
+
+# dotenv
+.env
