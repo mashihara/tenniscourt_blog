@@ -49,6 +49,10 @@ export default {
       }
     }
   },
+  // TODO:check created,beforemount,mount
+  created: function () {
+    this.$store.dispatch('setPlaceList')
+  },
   methods: {
     handleDelete (index, row) {
       this.$store.commit('increment')

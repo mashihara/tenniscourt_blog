@@ -3,17 +3,7 @@ import axios from 'axios'
 const store = ({
   state: {
     count: 0,
-    tableData: [{
-      display_id: '0001',
-      place_name: '有明'
-    }, {
-      display_id: '0002',
-      place_name: '大井埠頭'
-    }, {
-      display_id: '0003',
-      place_name: '平和島公園'
-    }
-    ]
+    tableData: []
   },
   getters: {
     count2bai: state => {
@@ -21,9 +11,11 @@ const store = ({
     }
   },
   actions: {
-    setPlacelist ({ commit }) {
-      let tableData = axios.get('/api/tableData')
-      commit('setPlacelist', tableData)
+    setPlaceList ({ commit }) {
+      axios.get('/api/place').then(function (res) {
+        console.log(res)
+        commit('setPlaceList', res.data)
+      })
     }
   },
   mutations: {
@@ -33,7 +25,7 @@ const store = ({
     add: (state, payload) => {
       state.count += payload.amount
     },
-    setPlacelist: (state, tableData) => {
+    setPlaceList: (state, tableData) => {
       state.tableData = tableData
     }
   }
