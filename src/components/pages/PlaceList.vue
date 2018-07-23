@@ -63,11 +63,11 @@ export default {
   },
   computed: {
     ...mapState({
-      count: state => state.count,
-      tableData: state => state.tableData
+      count: store => store.place.count,
+      tableData: store => store.place.tableData
     }),
     ...mapGetters([
-      'count2bai'
+      'place/count2bai'
     ])
   }
 }

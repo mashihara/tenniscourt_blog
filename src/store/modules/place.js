@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const store = ({
+const place = ({
   state: {
     count: 0,
     tableData: []
@@ -30,4 +30,4 @@ const store = ({
     }
   }
 })
-export default store
+export default place

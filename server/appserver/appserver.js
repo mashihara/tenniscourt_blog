@@ -1,7 +1,7 @@
+require('dotenv').config()
 var express = require('express');
 var morgan = require('morgan');
 var rootRouter = require('./routes');
-require('dotenv').config()
 
 var app = express();
 

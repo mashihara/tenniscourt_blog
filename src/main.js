@@ -3,7 +3,12 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import store from '@/store/store.js'
+import store from '@/store'
+
+// Vuetify
+import Vuetify from 'vuetify'
+import 'vuetify/dist/vuetify.min.css'
+import 'material-design-icons-iconfont/dist/material-design-icons.css'
 
 // Element-ui
 import ElementUI from 'element-ui'
@@ -19,6 +24,9 @@ import Vuex from 'vuex'
 
 Vue.config.productionTip = false
 
+// Vuetify
+Vue.use(Vuetify)
+
 // Element-ui
 Vue.use(ElementUI, {locale})
 
@@ -33,5 +41,5 @@ new Vue({
   router,
   components: { App },
   template: '<App/>',
-  store: new Vuex.Store(store)
+  store: store
 })

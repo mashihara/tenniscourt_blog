@@ -2,6 +2,13 @@
 
 > A Vue.js project
 
+## Overview
+### 主な起動ルート
+1. index.html -> src/main.js (webpack のbuildで)
+2. src/main.js -> src/App.vue
+3. src/App.vue -> router-view = src/router/index.js (vue-routerが呼ばれる)
+
+
 ## Build Setup
 
 ``` bash
