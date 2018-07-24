@@ -1,16 +1,16 @@
 <template>
   <div id="app">
-    <BearHeader/>
+    <Main/>
     <router-view/>
   </div>
 </template>
 
 <script>
-import BearHeader from '@/components/common/BearHeader'
+import Main from '@/components/common/Main'
 export default {
   name: 'App',
   components: {
-    BearHeader
+    Main
   }
 }
 </script>
