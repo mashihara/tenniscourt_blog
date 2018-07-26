@@ -11,12 +11,8 @@
       <v-spacer></v-spacer>
     </v-toolbar>
     <v-content>
-      <v-container fluid fill-height class="grey lighten-4">
-        <v-layout justify-center align-center>
-          <v-flex shrink>
-            <router-view />
-          </v-flex>
-        </v-layout>
+      <v-container fluid fill-height class="grey lighten-5 pa-0">
+        <router-view/>
       </v-container>
     </v-content>
   </v-app>

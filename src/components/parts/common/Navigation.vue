@@ -1,6 +1,7 @@
 <template>
   <v-navigation-drawer
     :value="drawer"
+    @click="changeNavDrawer"
     fixed
     clipped
     class="grey lighten-5"
@@ -42,13 +43,13 @@ export default {
       {divider: true},
       {icon: 'map', text: 'テニスコートを探す', link: '/tokyo-tennis-map'},
       {icon: 'people', text: 'テニスサークルを探す', link: '/tokyo-tennis-map'},
-      {icon: 'touch_app', text: 'テニススクールを探す', link: '/tokyo-tennis-court'},
+      {icon: 'directions_run', text: 'テニススクールを探す', link: '/tokyo-tennis-court'},
       {divider: true},
       {icon: 'touch_app', text: 'about us', link: '/tokyo-tennis-court'},
       {divider: true},
-      {icon: 'touch_app', text: 'ログイン', link: '/tokyo-tennis-court'},
+      {icon: 'fingerprint', text: 'ログイン', link: '/tokyo-tennis-court'},
       {divider: true},
-      {icon: 'settings', text: '東京壁打ちマップ'}
+      {icon: 'touch_app', text: '東京壁打ちマップ'}
     ]
   }),
   methods: {
@@ -57,11 +58,17 @@ export default {
     },
     titlePush: function () {
       this.$router.push('/')
+    },
+    changeNavDrawer: function () {
+      this.$store.commit('changeNavDrawer')
     }
+
   },
   computed: {
-    drawer: function () {
-      return this.$store.state.common.navDrawer
+    drawer: {
+      get () {
+        return this.$store.state.common.navDrawer
+      }
     }
   }
 }
