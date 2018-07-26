@@ -1,7 +1,7 @@
 <template>
   <v-data-table
     :headers="headers"
-    :items="tableData"
+    :items="placeData"
     :loading="loading"
     hide-actions
     class="elevation-1"
@@ -37,7 +37,7 @@ export default {
   },
   computed: {
     ...mapState({
-      tableData: store => store.place.tableData,
+      placeData: store => store.place.tableData,
       loading: store => store.place.loading
     })
   }

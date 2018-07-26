@@ -14,12 +14,12 @@ export default new Router({
       component: PlaceList
     },
     {
-      path: '/PlaceEdit',
+      path: '/tennis-place-edit',
       name: 'PlaceEdit',
       component: PlaceEdit
     },
     {
-      path: '/CourtEdit',
+      path: '/tennis-court-edit',
       name: 'CourtEdit',
       component: CourtEdit
     }

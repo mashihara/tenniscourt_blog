@@ -8,6 +8,15 @@
 2. src/main.js -> src/App.vue
 3. src/App.vue -> router-view = src/router/index.js (vue-routerが呼ばれる)
 
+## 実行時
+```bash
+# serve with hot reload at localhost:8080
+npm run dev
+
+# serve with hot reload at localhost:3000
+npm run server
+```
+
 
 ## Build Setup
 
