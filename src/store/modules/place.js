@@ -3,7 +3,8 @@ import axios from 'axios'
 const place = ({
   state: {
     count: 0,
-    tableData: []
+    tableData: [],
+    loading: true
   },
   getters: {
     count2bai: state => {
@@ -27,6 +28,7 @@ const place = ({
     },
     setPlaceList: (state, tableData) => {
       state.tableData = tableData
+      state.loading = false
     }
   }
 })

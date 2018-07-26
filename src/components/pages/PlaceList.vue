@@ -1,40 +1,17 @@
 <template>
-  <div>
-    <h1>{{ count }}</h1>
-    <el-table
-      :data="tableData"
-      :default-sort="{prop: 'display_id', order: 'ascending'}"
-      style="width: 100%">
-
-      <el-table-column
-        property="display_id"
-        label="display_id"
-        width="100">
-      </el-table-column>
-
-      <el-table-column
-        label="コート名"
-        width="100">
-        <template slot-scope="scope">
-          <router-link to="/PlaceEdit">{{ scope.row.place_name }}</router-link>
-        </template>
-      </el-table-column>
-
-      <el-table-column>
-        <template slot-scope="scope">
-          <el-button
-            size="mini"
-            type="danger"
-            @click="handleDelete(scope.$index, scope.row)">削除
-          </el-button>
-          <el-button
-            size="mini"
-            @click="handleAdd(scope.$index, scope.row)">追加
-          </el-button>
-        </template>
-      </el-table-column>
-    </el-table>
-  </div>
+  <v-data-table
+    :headers="headers"
+    :items="tableData"
+    :loading="loading"
+    hide-actions
+    class="elevation-1"
+  >
+    <v-progress-linear slot="progress" color="blue" indeterminate></v-progress-linear>
+    <template slot="items" slot-scope="props">
+      <td>{{ props.item.display_id }}</td>
+      <td><router-link to="/PlaceEdit">{{ props.item.place_name }}</router-link></td>
+    </template>
+  </v-data-table>
 </template>
 
 <script>
@@ -44,31 +21,25 @@ export default {
   name: 'PlaceList',
   data () {
     return {
-      payload: {
-        amount: 10
-      }
+      headers: [
+        {
+          text: 'display_id',
+          align: 'left',
+          value: 'display_id'
+        },
+        { text: 'コート名', value: 'place_name' }
+      ]
     }
   },
   // TODO:check created,beforemount,mount
   created: function () {
     this.$store.dispatch('setPlaceList')
   },
-  methods: {
-    handleDelete (index, row) {
-      this.$store.commit('increment')
-    },
-    handleAdd (index, row) {
-      this.$store.commit('add', this.$data.payload)
-    }
-  },
   computed: {
     ...mapState({
-      count: store => store.place.count,
-      tableData: store => store.place.tableData
-    }),
-    ...mapGetters([
-      'place/count2bai'
-    ])
+      tableData: store => store.place.tableData,
+      loading: store => store.place.loading
+    })
   }
 }
 </script>
