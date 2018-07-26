@@ -6,7 +6,7 @@
     hide-actions
     class="elevation-1"
   >
-    <v-progress-linear slot="progress" color="blue" indeterminate></v-progress-linear>
+    <v-progress-linear slot="progress" color="primary" indeterminate></v-progress-linear>
     <template slot="items" slot-scope="props">
       <td>{{ props.item.display_id }}</td>
       <td><router-link to="/PlaceEdit">{{ props.item.place_name }}</router-link></td>
@@ -15,18 +15,13 @@
 </template>
 
 <script>
-import { mapState, mapGetters } from 'vuex'
-
+import { mapState } from 'vuex'
 export default {
   name: 'PlaceList',
   data () {
     return {
       headers: [
-        {
-          text: 'display_id',
-          align: 'left',
-          value: 'display_id'
-        },
+        { text: 'display_id', value: 'display_id' },
         { text: 'コート名', value: 'place_name' }
       ]
     }
