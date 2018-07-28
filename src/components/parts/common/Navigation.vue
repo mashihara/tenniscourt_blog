@@ -65,7 +65,7 @@ export default {
         return this.$store.state.common.navDrawer
       },
       set () {
-        this.$store.commit('changeNavDrawer')
+        this.$store.commit('falseNavDrawer')
       }
     }
   }
