@@ -1,15 +1,13 @@
 <template>
   <v-card>
-    <v-card-title>
+    <v-card-title class="pt-0">
       <v-text-field
         v-model="search"
         append-icon="search"
         label="display_idかコート名で検索"
         single-line
-        hide-details
       ></v-text-field>
     </v-card-title>
-
     <v-data-table
       :headers="headers"
       :items="placeData"
@@ -23,7 +21,7 @@
       <v-progress-linear slot="progress" color="primary" indeterminate></v-progress-linear>
       <template slot="items" slot-scope="props">
         <td>{{ props.item.display_id }}</td>
-        <td><router-link to="/tennis-place-edit">{{ props.item.place_name }}</router-link></td>
+        <td><router-link :to="{ name: 'PlaceEdit', params: { display_id: props.item.display_id }}">{{ props.item.place_name }}</router-link></td>
       </template>
       <v-alert slot="no-results" :value="true" color="error" icon="warning">
         "{{ search }}"というコートはありません。

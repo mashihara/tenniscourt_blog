@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import PlaceList from '@/components/pages/PlaceList'
 import PlaceEdit from '@/components/pages/PlaceEdit'
-import CourtEdit from '@/components/pages/CourtEdit'
+import CourtTypeEdit from '@/components/pages/CourtTypeEdit'
 
 Vue.use(Router)
 
@@ -14,14 +14,14 @@ export default new Router({
       component: PlaceList
     },
     {
-      path: '/tennis-place-edit',
+      path: '/place/:display_id/edit',
       name: 'PlaceEdit',
       component: PlaceEdit
     },
     {
-      path: '/tennis-court-edit',
-      name: 'CourtEdit',
-      component: CourtEdit
+      path: '/place/:display_id/court/:court_type_id',
+      name: 'CourtTypeEdit',
+      component: CourtTypeEdit
     }
   ]
 })

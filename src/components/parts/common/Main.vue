@@ -1,6 +1,7 @@
 <template>
   <v-app id="inspire">
     <Navigation />
+    <!-- navigation -->
     <!-- header -->
     <v-toolbar color="accent" app absolute clipped-left>
       <v-toolbar-side-icon @click="changeNavDrawer"></v-toolbar-side-icon>
@@ -20,22 +21,6 @@
 <script>
 import Navigation from '@/components/parts/common/Navigation'
 export default {
-  data: () => ({
-    drawer: null,
-    items: [
-      {icon: 'home', text: 'ホーム', link: '/'},
-      {divider: true},
-      {icon: 'map', text: 'テニスコートを探す', link: '/tokyo-tennis-map'},
-      {icon: 'people', text: 'テニスサークルを探す', link: '/tokyo-tennis-map'},
-      {icon: 'directions_run', text: 'テニススクールを探す', link: '/tokyo-tennis-court'},
-      {divider: true},
-      {icon: 'touch_app', text: 'about us', link: '/tokyo-tennis-court'},
-      {divider: true},
-      {icon: 'fingerprint', text: 'ログイン', link: '/tokyo-tennis-court'},
-      {divider: true},
-      {icon: 'touch_app', text: '東京壁打ちマップ'}
-    ]
-  }),
   components: {Navigation},
   methods: {
     pushLink: function () {
