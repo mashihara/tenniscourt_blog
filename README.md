@@ -48,22 +48,23 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 # コミットメッセージ
 ## フォーマット
 ```
-type(scope):commit messagee
+type(scope):commit messagee（動詞で始める）
 ```
 ### 例：
 ```
-chore(webserver): npm install superagent
+chore(webserver): installs superagent
+fix(webserver): refactors webcomponents
 ```
 
 ## type
-- add: Add new feature
+- feat/add: Add new feature
 - fix: A bug fix
 - docs: Documentation only changes
 - style: 空白、書式の変更（コードの意味に変更を与えない）
 - refactor:バグfixやコードの修正ではない変更
 - perf: 性能改善のための変更
 - test: テストの追加
-- chore: ライブラリの変更、ドキュメントの追加（※choreはチョアーと読む。雑用という意味）
+- setup/chore: ライブラリの変更、ドキュメントの追加（※choreはチョアーと読む。雑用という意味）
 
 # install memo
 ```

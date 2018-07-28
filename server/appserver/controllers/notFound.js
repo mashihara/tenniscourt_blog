@@ -5,7 +5,7 @@
  * @route /*
  * @method GET
  */
-async function notFound (req, res) {
+function notFound (req, res) {
   res.send('404 Not Found');
 };
 

@@ -2,13 +2,12 @@ var Router = require('express')
 var placeController =  require('./controllers/place')
 var notFoundController = require('./controllers/notFound')
 
-const rootRouter = Router()
+const baseRouter = Router()
 
 // api routes
-rootRouter.use('/api/place', placeController)
-rootRouter.use('/api/place', placeController)
+baseRouter.use('/api/place', placeController)
 
 // wildcard routes
-rootRouter.get('*', notFoundController)
+baseRouter.get('*', notFoundController)
 
-module.exports = rootRouter
+module.exports = baseRouter
