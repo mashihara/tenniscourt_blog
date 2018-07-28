@@ -44,9 +44,7 @@
       <v-spacer></v-spacer>
     </v-toolbar>
     <v-content>
-      <v-container fluid fill-height class="grey lighten-5 pa-0">
-        <router-view/>
-      </v-container>
+      <router-view/>
     </v-content>
   </v-app>
 </template>
