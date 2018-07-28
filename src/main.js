@@ -21,6 +21,10 @@ import colors from 'vuetify/es5/util/colors'
 // import 'bootstrap/dist/css/bootstrap.css'
 // import 'bootstrap-vue/dist/bootstrap-vue.css'
 
+// Vee-Validate
+import VeeValidate from 'vee-validate'
+Vue.use(VeeValidate)
+
 Vue.config.productionTip = false
 
 // Vuetify

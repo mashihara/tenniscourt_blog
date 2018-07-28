@@ -4,7 +4,7 @@ const common = {
   },
   mutations: {
     changeNavDrawer: (state) => {
-      state.navDrawer = !state.navDrawer
+      state.navDrawer = state.navDrawer
     }
   }
 }

@@ -1,7 +1,6 @@
 <template>
   <v-navigation-drawer
-    :value="drawer"
-    @click="changeNavDrawer"
+    v-model="drawer"
     fixed
     clipped
     class="grey lighten-5"
@@ -58,16 +57,15 @@ export default {
     },
     titlePush: function () {
       this.$router.push('/')
-    },
-    changeNavDrawer: function () {
-      this.$store.commit('changeNavDrawer')
     }
-
   },
   computed: {
     drawer: {
       get () {
         return this.$store.state.common.navDrawer
+      },
+      set () {
+        this.$store.commit('changeNavDrawer')
       }
     }
   }
