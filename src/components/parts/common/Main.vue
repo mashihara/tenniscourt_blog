@@ -28,7 +28,7 @@ export default {
     titlePush: function () {
       this.$router.push('/')
     },
-    changeNavDrawer: function () {
+    changeNavDrawer: function (event) {
       this.$store.commit('changeNavDrawer')
     }
   }

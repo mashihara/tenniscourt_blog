@@ -64,8 +64,11 @@ export default {
       get () {
         return this.$store.state.common.navDrawer
       },
-      set () {
-        this.$store.commit('falseNavDrawer')
+      set (nextValue) {
+        let preValue = this.$store.state.common.navDrawer
+        if (nextValue !== preValue) {
+          this.$store.commit('changeNavDrawer', nextValue)
+        }
       }
     }
   }

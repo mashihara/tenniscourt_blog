@@ -3,11 +3,8 @@ const common = {
     navDrawer: false
   },
   mutations: {
-    changeNavDrawer: (state) => {
-      state.navDrawer = !state.navDrawer
-    },
-    falseNavDrawer: (state) => {
-      state.navDrawer = false
+    changeNavDrawer: (state, nextValue) => {
+      state.navDrawer = nextValue === undefined ? !state.navDrawer : nextValue
     }
   }
 }
