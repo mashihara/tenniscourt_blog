@@ -67,7 +67,7 @@ export default {
       set (nextValue) {
         let preValue = this.$store.state.common.navDrawer
         if (nextValue !== preValue) {
-          this.$store.commit('changeNavDrawer', nextValue)
+          this.$store.commit('common/changeNavDrawer', nextValue)
         }
       }
     }

@@ -1,20 +1,21 @@
 import axios from 'axios'
 
 const place = ({
+  namespaced: true,
   state: {
-    tableData: [],
+    placeData: [],
     loading: true
   },
   actions: {
-    setPlaceList ({ commit }) {
+    selectPlaceList ({ commit }) {
       axios.get('/api/place').then(function (res) {
-        commit('setPlaceList', res.data)
+        commit('selectPlaceList', res.data)
       })
     }
   },
   mutations: {
-    setPlaceList: (state, tableData) => {
-      state.tableData = tableData
+    selectPlaceList: (state, placeData) => {
+      state.placeData = placeData
       state.loading = false
     }
   }

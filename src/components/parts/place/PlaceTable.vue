@@ -31,7 +31,9 @@
 </template>
 
 <script>
-import { mapState } from 'vuex'
+import { createNamespacedHelpers } from 'vuex'
+const { mapState, mapActions } = createNamespacedHelpers('place')
+
 export default {
   name: 'PlaceTable',
   data () {
@@ -43,15 +45,14 @@ export default {
       search: ''
     }
   },
-  // TODO:check created,beforemount,mount
+  methods: {
+    ...mapActions(['selectPlaceList'])
+  },
   created: function () {
-    this.$store.dispatch('setPlaceList')
+    this.selectPlaceList()
   },
   computed: {
-    ...mapState({
-      placeData: store => store.place.tableData,
-      loading: store => store.place.loading
-    })
+    ...mapState(['placeData', 'loading'])
   }
 }
 </script>

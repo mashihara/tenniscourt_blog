@@ -14,7 +14,6 @@ router.get('/', (req, res) => {
 
 router.get('/:display_id', (req, res) => {
   let display_id = req.params.display_id
-  console.log('display_id:', display_id)
   db.one('SELECT display_id,place_name FROM mt_place where display_id = $1',display_id)
     .then(function (data) {
       res.json(data)
