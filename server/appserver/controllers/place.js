@@ -23,6 +23,17 @@ router.get('/:display_id', (req, res) => {
     });
 });
 
+router.post('/:display_id', (req, res) => {
+  let display_id = req.params.display_id
+  db.one('SELECT display_id,place_name FROM mt_place where display_id = $1',display_id)
+    .then(function (data) {
+      res.json(data)
+    })
+    .catch(function (error) {
+      console.log("ERROR:", error);
+    });
+});
+
 router.get('/hoge', (req, res) => {
   res.send('Yes, place hoge api')
 });

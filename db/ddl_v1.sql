@@ -1,7 +1,7 @@
 drop table MT_SYSTEM;
 drop table MT_PLACE;
-drop table MT_PLACE_INFO;
-drop table MT_COURT;
+drop table MT_PLACE_BLOG;
+drop table MT_COURT_TYPE;
 drop table MT_COURT_TYPE_FEE;
 
 
@@ -47,7 +47,7 @@ create table
   ,adress	varchar(100) -- 住所
   ,latitude decimal(8,5) -- 緯度
   ,longitude decimal(8,5) -- 軽度
-  ,open_hour boolean -- 営業時間
+  ,open_hour_description varchar(500) -- 営業時間の説明
   ,changing_room_flg	boolean --更衣室有無フラグ
   ,shower_flg boolean -- シャワー有無フラグ
   ,toilet_flg boolean  -- トイレ有無フラグ
