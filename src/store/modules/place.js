@@ -8,7 +8,7 @@ const place = ({
   },
   actions: {
     selectPlaceList ({ commit }) {
-      axios.get('/api/place').then(function (res) {
+      axios.get('/api/places').then(function (res) {
         commit('selectPlaceList', res.data)
       })
     }
