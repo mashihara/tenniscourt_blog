@@ -19,3 +19,7 @@ ecs-params.yml
 
 # dotenv
 .env
+
+## my setting
+db/*
+document/*
