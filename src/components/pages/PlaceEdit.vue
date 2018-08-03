@@ -8,6 +8,7 @@
         </v-flex>
       </v-layout>
     </v-container>
+    <PlaceBottomNav />
   </div>
 
 </template>
@@ -16,8 +17,10 @@
 
 import BreadCrumbs from '@/components/parts/common/BreadCrumbs'
 import PlaceEditForm from '@/components/parts/place/PlaceEditForm'
+import PlaceBottomNav from '@/components/parts/place/PlaceBottomNav'
+
 export default {
-  components: { BreadCrumbs, PlaceEditForm },
+  components: { BreadCrumbs, PlaceEditForm, PlaceBottomNav },
   data () {
     return {
       form: {

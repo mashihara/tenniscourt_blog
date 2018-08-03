@@ -87,7 +87,7 @@
         :counter="100"
         outline
       ></v-textarea>
-      <v-btn @click="submit" color="primary" block>更新する</v-btn>
+      <v-btn @click="submit" color="primary" class="mb-5" block>更新する</v-btn>
     </form>
     <SnackBar :snackbarFlg="snackbarFlg" @changeSnackBarFlg="changeSnackBarFlg" :text="snackbarText" />
   </div>
