@@ -1,4 +1,4 @@
-const common = {
+const SnackBar = {
   namespaced: true,
   state: {
     navDrawer: false
@@ -9,4 +9,4 @@ const common = {
     }
   }
 }
-export default common
+export default SnackBar

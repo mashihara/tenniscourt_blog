@@ -29,7 +29,7 @@ export default {
       this.$router.push('/')
     },
     changeNavDrawer: function (event) {
-      this.$store.commit('common/changeNavDrawer')
+      this.$store.commit('Navigation/changeNavDrawer')
     }
   }
 }

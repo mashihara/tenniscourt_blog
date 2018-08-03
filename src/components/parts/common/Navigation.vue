@@ -62,12 +62,12 @@ export default {
   computed: {
     drawer: {
       get () {
-        return this.$store.state.common.navDrawer
+        return this.$store.state.Navigation.navDrawer
       },
       set (nextValue) {
-        let preValue = this.$store.state.common.navDrawer
+        let preValue = this.$store.state.Navigation.navDrawer
         if (nextValue !== preValue) {
-          this.$store.commit('common/changeNavDrawer', nextValue)
+          this.$store.commit('Navigation/changeNavDrawer', nextValue)
         }
       }
     }
