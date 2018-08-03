@@ -8,8 +8,10 @@ const placeDetail = ({
   },
   actions: {
     selectPlaceDetail ({ commit }, displayId) {
+      commit('Progress/changeProgressFlg', true, { root: true })
       axios.get(`/api/places/${displayId}`).then(function (res) {
         commit('selectPlaceDetail', res.data)
+        commit('Progress/changeProgressFlg', false, { root: true })
       })
     },
     updatePlaceDetail ({ commit, rootState }, model) {

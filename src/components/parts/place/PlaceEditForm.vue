@@ -1,5 +1,6 @@
 <template>
   <div>
+    <Progress />
     <form>
       <v-text-field
         label="display_id"
@@ -95,11 +96,12 @@
 <script>
 import { createNamespacedHelpers } from 'vuex'
 import SnackBar from '@/components/parts/common/SnackBar'
+import Progress from '@/components/parts/common/Progress'
 const { mapState, mapActions } = createNamespacedHelpers('placeDetail')
 
 export default {
   name: 'PlaceEditForm',
-  components: { SnackBar },
+  components: { SnackBar, Progress },
   data: () => ({
     testFlg: true,
     snackbarText: '更新が完了しました'
@@ -109,12 +111,11 @@ export default {
     this.selectPlaceDetail(displayId)
   },
   methods: {
+    ...mapActions(['selectPlaceDetail', 'updatePlaceDetail']),
     submit () {
       this.updatePlaceDetail(this.placeDetailData)
     },
-    ...mapActions(['selectPlaceDetail', 'updatePlaceDetail']),
     changeSnackBarFlg (value) {
-      console.log(value)
       this.$store.commit('completeUpdate', value)
     }
   },
