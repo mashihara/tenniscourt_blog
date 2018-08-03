@@ -30,7 +30,7 @@ Vue.config.productionTip = false
 // Vuetify
 Vue.use(Vuetify, {
   theme: {
-    primary: colors.teal.lighten3, // #E53935
+    primary: colors.teal.lighten1, // #E53935
     secondary: colors.red.lighten1, // #FFCDD2
     accent: colors.grey.lighten5, // #3F51B5
     error: '#FF5252',

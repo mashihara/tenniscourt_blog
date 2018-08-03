@@ -1,15 +1,15 @@
 <template>
   <v-snackbar
-    :value="flg"
-    :timeout="6000"
+    v-model="flg"
+    :timeout="3000"
     bottom
-    left
+    right
   >
     {{ text }}
     <v-btn
       color="pink"
       flat
-      @click="$emit('changeSnackBarFlg',false)"
+      @click="changeFlg(false)"
     >
       Close
     </v-btn>
@@ -17,19 +17,26 @@
 </template>
 
 <script>
+import { createNamespacedHelpers } from 'vuex'
+const { mapState, mapMutations } = createNamespacedHelpers('SnackBar')
 export default {
   name: 'SnackBar',
-  props: ['snackbarFlg', 'text'],
+  props: ['text'],
   computed: {
+    ...mapState(['snackBarFlg']),
     flg: {
       get () {
-        console.log('get')
-        return this.snackbarFlg
+        return this.snackBarFlg
       },
-      set () {
-        console.log('set')
-        this.$emit('changeSnackBarFlg')
+      set (nextValue) {
+        this.changeSnackBarFlg(nextValue)
       }
+    }
+  },
+  methods: {
+    ...mapMutations(['changeSnackBarFlg']),
+    changeFlg (nextValue) {
+      this.changeSnackBarFlg(nextValue)
     }
   }
 }

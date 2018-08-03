@@ -38,13 +38,13 @@
         :counter="100"
         outline
       ></v-text-field>
-      <v-text-field
+      <v-textarea
         label="adress"
         v-model="placeDetailData.adress"
         v-validate="'required|max:100'"
         :counter="100"
         outline
-      ></v-text-field>
+      ></v-textarea>
       <v-text-field
         label="latitude"
         v-model="placeDetailData.latitude"
@@ -86,7 +86,7 @@
         :counter="100"
         outline
       ></v-textarea>
-      <v-btn @click="submit">更新する</v-btn>
+      <v-btn @click="submit" color="primary" block>更新する</v-btn>
     </form>
     <SnackBar :snackbarFlg="snackbarFlg" @changeSnackBarFlg="changeSnackBarFlg" :text="snackbarText" />
   </div>

@@ -12,9 +12,9 @@ const placeDetail = ({
         commit('selectPlaceDetail', res.data)
       })
     },
-    updatePlaceDetail ({ commit }, model) {
+    updatePlaceDetail ({ commit, rootState }, model) {
       axios.post(`/api/places/${model.display_id}`, model).then(function (res) {
-        commit('completeUpdate', true)
+        commit('SnackBar/changeSnackBarFlg', true, { root: true })
       })
     }
   },

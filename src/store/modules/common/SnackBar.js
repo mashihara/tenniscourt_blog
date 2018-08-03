@@ -1,11 +1,13 @@
 const SnackBar = {
   namespaced: true,
-  state: {
-    navDrawer: false
+  state () {
+    return {
+      snackBarFlg: false
+    }
   },
   mutations: {
-    changeNavDrawer: (state, nextValue) => {
-      state.navDrawer = nextValue === undefined ? !state.navDrawer : nextValue
+    changeSnackBarFlg: (state, nextValue) => {
+      state.snackBarFlg = nextValue === undefined ? !state.snackBarFlg : nextValue
     }
   }
 }
