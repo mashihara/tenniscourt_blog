@@ -32,7 +32,7 @@
 
 <script>
 import { createNamespacedHelpers } from 'vuex'
-const { mapState, mapActions } = createNamespacedHelpers('place')
+const { mapState, mapActions } = createNamespacedHelpers('place/PlaceList')
 
 export default {
   name: 'PlaceTable',

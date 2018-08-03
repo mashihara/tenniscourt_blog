@@ -97,7 +97,7 @@
 import { createNamespacedHelpers } from 'vuex'
 import SnackBar from '@/components/parts/common/SnackBar'
 import Progress from '@/components/parts/common/Progress'
-const { mapState, mapActions } = createNamespacedHelpers('placeDetail')
+const { mapState, mapActions } = createNamespacedHelpers('place/PlaceDetail')
 
 export default {
   name: 'PlaceEditForm',

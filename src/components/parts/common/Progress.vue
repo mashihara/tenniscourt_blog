@@ -10,7 +10,7 @@
 
 <script>
 import { createNamespacedHelpers } from 'vuex'
-const { mapState, mapMutations } = createNamespacedHelpers('Progress')
+const { mapState, mapMutations } = createNamespacedHelpers('common/Progress')
 export default {
   name: 'Progress',
   computed: {

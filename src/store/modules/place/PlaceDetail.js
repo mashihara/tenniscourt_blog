@@ -8,15 +8,15 @@ const placeDetail = ({
   },
   actions: {
     selectPlaceDetail ({ commit }, displayId) {
-      commit('Progress/changeProgressFlg', true, { root: true })
+      commit('common/Progress/changeProgressFlg', true, { root: true })
       axios.get(`/api/places/${displayId}`).then(function (res) {
         commit('selectPlaceDetail', res.data)
-        commit('Progress/changeProgressFlg', false, { root: true })
+        commit('common/Progress/changeProgressFlg', false, { root: true })
       })
     },
     updatePlaceDetail ({ commit, rootState }, model) {
       axios.post(`/api/places/${model.display_id}`, model).then(function (res) {
-        commit('SnackBar/changeSnackBarFlg', true, { root: true })
+        commit('common/SnackBar/changeSnackBarFlg', true, { root: true })
       })
     }
   },

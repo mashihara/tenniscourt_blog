@@ -18,7 +18,7 @@
 
 <script>
 import { createNamespacedHelpers } from 'vuex'
-const { mapState, mapMutations } = createNamespacedHelpers('SnackBar')
+const { mapState, mapMutations } = createNamespacedHelpers('common/SnackBar')
 export default {
   name: 'SnackBar',
   props: ['text'],

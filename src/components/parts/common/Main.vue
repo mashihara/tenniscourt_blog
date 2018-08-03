@@ -29,7 +29,7 @@ export default {
       this.$router.push('/')
     },
     changeNavDrawer: function (event) {
-      this.$store.commit('Navigation/changeNavDrawer')
+      this.$store.commit('common/Navigation/changeNavDrawer')
     }
   }
 }
@@ -38,7 +38,6 @@ export default {
   #keep main .container {
     height: 660px;
   }
-
   .text {
     font-weight: 400;
   }
